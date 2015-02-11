@@ -11,6 +11,9 @@ $i: 5;
   $i: $i + 5;
 }
 
+// Add a few specials
+$gridSizes: join($gridSizes, (33, 66));
+
 // Create width maps
 @each $size in $gridSizes {
   .grid-#{$size} {
