@@ -1,0 +1,25 @@
+%gridCell {
+  flex: 1;
+}
+
+$gridSizes: (); // Grid numbers.
+
+// Create a list of widths. For simplicity.
+$i: 5;
+@while $i <= 100 {
+  $gridSizes: append($gridSizes, $i);
+  $i: $i + 5;
+}
+
+// Create width maps
+@each $size in $gridSizes {
+  .grid-#{$size} {
+    width: percentage($size/100);
+    @extend %gridCell;
+  }
+}
+
+// Row definition
+.row {
+  display: flex;
+}
