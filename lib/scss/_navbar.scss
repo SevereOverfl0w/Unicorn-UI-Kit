@@ -1,3 +1,36 @@
 .navbar {
+  // Navbar wrapper of sorts
   height: $navbarHeight;
+  background: $navbarBg;
+  color: $navbarColor;
+
+  a {
+    color: inherit;
+  }
+
+  .navbarItems {
+    // Semantic element: ul
+    // Holds links each child should be an item (Link, Logo, Form?!)
+    display: flex;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    &.justify {
+      > * {
+        flex: 1;
+      }
+    }
+
+    > * {
+      // Semantic element: li
+      display: inline-block;
+      line-height: $navbarHeight;
+
+      padding-left: 0.5em;
+      padding-right: 0.5em;
+      text-align: center;
+    }
+  }
 }
