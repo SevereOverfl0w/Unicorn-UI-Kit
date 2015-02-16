@@ -28,6 +28,10 @@
       display: inline-block;
       line-height: $navbarHeight;
 
+      &:hover {
+        background-color: $navbarHoverBg;
+      }
+
       padding-left: 0.5em;
       padding-right: 0.5em;
       text-align: center;

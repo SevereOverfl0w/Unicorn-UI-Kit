@@ -1,3 +1,4 @@
 $navbarHeight: 50px !default;
-$navbarBg: #333;
-$navbarColor: white;
+$navbarBg: #333 !default;
+$navbarHoverBg: darken($navbarBg, 10%) !default;
+$navbarColor: white !default;
