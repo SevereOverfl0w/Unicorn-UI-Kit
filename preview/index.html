@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="unicorn.css" type="text/css" media="all" />
   </head>
   <body>
-    <nav class="navbar">
+    <nav class="navbar" id="fixOnScroll">
       <ul class="navbarItems">
         <li>Home</li>
         <li>Home</li>
@@ -47,9 +47,13 @@
         </div>
         <div class="grid-30 demo">
           30% wide
+          <img src="http://i.imgur.com/0GcHnPI.jpg" />
         </div>
       </div>
     </main>
     <script src="unicorn.js"></script>
+    <script>
+      var navbarFix = new fixOnScroll(document.getElementById('fixOnScroll'));
+    </script>
   </body>
 </html>

@@ -4,6 +4,13 @@
   background: $navbarBg;
   color: $navbarColor;
 
+  &.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
   a {
     color: inherit;
   }

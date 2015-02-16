@@ -13,6 +13,7 @@ gulp.task('styles', function(){
 
 gulp.task('scripts', function() {
   return gulp.src('./lib/ts/*.ts')
+             .pipe($.plumber())
              .pipe($.tsc())
              .pipe(gulp.dest('./dist/'))
 });
