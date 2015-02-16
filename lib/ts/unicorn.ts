@@ -9,9 +9,20 @@ class fixOnScroll {
     this.element = element;
     window.addEventListener('scroll', this.handleScroll.bind(this))
   }
+  getElement(){
+    switch (typeof this.element){
+      case 'function':
+        return this.element();
+      case 'string':
+        return document.querySelector(this.element);
+      default:
+        return this.element;
+    }
+  }
   handleScroll(e){
-    this.element.classList.remove('fixed');
-    var rekt = this.element.getBoundingClientRect();
-    if(rekt.top < 0) this.element.classList.add('fixed');
+    var element = this.getElement();
+    element.classList.remove('fixed');
+    var rekt = element.getBoundingClientRect();
+    if(rekt.top < 0) element.classList.add('fixed');
   }
 }
