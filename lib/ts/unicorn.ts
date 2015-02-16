@@ -4,21 +4,28 @@ var prepareHello = (name:string) => {
 
 console.log(prepareHello('Unicorns'));
 
-class fixOnScroll {
+class UnicornPlugin {
+  getElement(providedElement){
+    var element = providedElement || this.element;
+    switch (typeof element){
+      case 'function':
+        return element();
+      case 'string':
+        return document.querySelector(element);
+      default:
+        return element;
+    }
+  }
+}
+
+class fixOnScroll extends UnicornPlugin {
   constructor(element){
     this.element = element;
     window.addEventListener('scroll', this.handleScroll.bind(this))
   }
-  getElement(){
-    switch (typeof this.element){
-      case 'function':
-        return this.element();
-      case 'string':
-        return document.querySelector(this.element);
-      default:
-        return this.element;
-    }
-  }
+  pulldown(){
+    window.removeEventListener('scroll', this.handleScroll.bind(this))
+  },
   handleScroll(e){
     var element = this.getElement();
     element.classList.remove('fixed');
